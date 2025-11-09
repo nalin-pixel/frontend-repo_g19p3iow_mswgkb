@@ -1,28 +1,37 @@
-import { useState } from 'react'
+import HeroSection from './components/HeroSection';
+import AboutSection from './components/AboutSection';
+import ProductsSection from './components/ProductsSection';
+import RitualSection from './components/RitualSection';
+import TestimonialsNewsletterFooter from './components/TestimonialsNewsletterFooter';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-[#FAF7F2] text-gray-800">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-[#FAF7F2]/80 backdrop-blur border-b border-black/5">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded-full bg-[#2C2A28] text-white flex items-center justify-center">☾</div>
+            <span className="font-serif text-lg text-[#2C2A28] tracking-wide">Lune</span>
+          </a>
+          <nav className="hidden md:flex items-center gap-8 text-sm text-gray-700">
+            <a href="#about" className="hover:text-[#2C2A28]">About</a>
+            <a href="#collection" className="hover:text-[#2C2A28]">Collection</a>
+            <a href="#ritual" className="hover:text-[#2C2A28]">Ritual</a>
+            <a href="#newsletter" className="hover:text-[#2C2A28]">Newsletter</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <ProductsSection />
+        <RitualSection />
+        <TestimonialsNewsletterFooter />
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
